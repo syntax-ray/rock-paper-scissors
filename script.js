@@ -45,18 +45,22 @@ function playRound(playerChoice, computerChoice) {
 
 
 function playGame() {
+    alert("You are about to play rock paper scissors vs the super computer");
+    alert("You will play 5 rounds and then the winner and loser will be declared");
     for (let i = 0; i < 5; i++ ) {
         playRound(getPlayerChoice(), getComputerChoice());
     }
     if (playerScore === computerScore) {
-        console.log(`The game ended in a draw [${playerScore} - ${computerScore}]`);
+        alert(`The game ended in a draw [${playerScore} - ${computerScore}]`);
     }
     if (playerScore > computerScore) {
-        console.log(`Congratulations, you won :) [${playerScore} - ${computerScore}]`);
+        alert(`Congratulations, you won :) [${playerScore} - ${computerScore}]`);
     }
     if (playerScore < computerScore) {
-        console.log(`Unfortunately, You lost :( [${playerScore} - ${computerScore}]`)
+        alert(`Unfortunately, You lost :( [${playerScore} - ${computerScore}]`)
     }
     playerScore = 0;
     computerScore = 0;
 }
+
+playGame();
