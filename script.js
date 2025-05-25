@@ -9,7 +9,7 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let choice = prompt("Please enter your move").trim().toLowerCase();
-    return  POSSIBLE_CHOICES.includes(choice) ? choice : undefined;
+    return  POSSIBLE_CHOICES.includes(choice) ? choice : getPlayerChoice();
 }
 
 function playRound(playerChoice, computerChoice) {
@@ -41,4 +41,22 @@ function playRound(playerChoice, computerChoice) {
         default:
             alert("Wrong game :)");
     } 
+}
+
+
+function playGame() {
+    for (let i = 0; i < 5; i++ ) {
+        playRound(getPlayerChoice(), getComputerChoice());
+    }
+    if (playerScore === computerScore) {
+        console.log(`The game ended in a draw [${playerScore} - ${computerScore}]`);
+    }
+    if (playerScore > computerScore) {
+        console.log(`Congratulations, you won :) [${playerScore} - ${computerScore}]`);
+    }
+    if (playerScore < computerScore) {
+        console.log(`Unfortunately, You lost :( [${playerScore} - ${computerScore}]`)
+    }
+    playerScore = 0;
+    computerScore = 0;
 }
