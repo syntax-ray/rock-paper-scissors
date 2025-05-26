@@ -6,6 +6,7 @@ let paperBtn = document.querySelector('#paper');
 let scissorsBtn = document.querySelector('#scissors');
 let userScoreDisplay = document.querySelector('#user-score');
 let computerScoreDisplay = document.querySelector('#computer-score');
+let alert = document.querySelector('#alert');
 
 
 function getComputerChoice() {
@@ -23,29 +24,35 @@ function playRound(playerChoice, computerChoice) {
         case 'rock':
             if (computerChoice === "paper") {
                 computerScore += 1;
+                return 'Lost Round';
             }
             if (computerChoice === "scissors") {
                 playerScore += 1;
+                return 'Won Round';
             }
             break;
         case 'paper':
             if (computerChoice === "rock") {
                 playerScore += 1;
+                return 'Won Round';
             }
             if (computerChoice === "scissors") {
                 computerScore += 1;
+                return 'Lost Round';
             }
             break; 
         case 'scissors':
             if (computerChoice === "rock") {
                 computerScore += 1;
+                return 'Lost Round';
             }
             if (computerChoice === "paper") {
                 playerScore += 1;
+                return 'Won Round';
             }
             break; 
         default:
-            alert("Wrong game :)");
+            return 'Drew Round';
     } 
 }
 
@@ -74,15 +81,37 @@ function updateScoreDisplay() {
     computerScoreDisplay.textContent = `Computer: ${computerScore}`;
 }
 
+function showAlert(res) {
+    if (res === 'Won Round') {
+        alert.textContent = 'You won this round!';
+        alert.style.color = 'green';
+    } else if (res === 'Lost Round') {
+        alert.textContent = 'You lost this round!';
+        alert.style.color = 'red';
+    } else {
+        alert.textContent = 'This round was a draw!';
+        alert.style.color = 'blue';
+    }
+    alert.style.display = 'block';
+    setTimeout(() => {
+        alert.textContent = '';
+        alert.style.display = 'none';
+    }, 1000);
+    
+}
+
 rockBtn.addEventListener('click', () => {
-    playRound('rock', getComputerChoice());
+    outcome = playRound('rock', getComputerChoice());
     updateScoreDisplay();
+    showAlert(outcome)
 });
 paperBtn.addEventListener('click', () => {
-    playRound('paper', getComputerChoice());
+    outcome = playRound('paper', getComputerChoice());
     updateScoreDisplay();
+    showAlert(outcome);
 });
 scissorsBtn.addEventListener('click', () => {
-    playRound('scissors', getComputerChoice());
+    outocme = playRound('scissors', getComputerChoice());
     updateScoreDisplay();
+    showAlert(outcome);
 });

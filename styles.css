@@ -65,3 +65,24 @@ h1 {
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
+
+
+#alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    display: none; /* Hidden by default */
+}
+#alert.show {
+    display: block; /* Show when the class is added */
+}
+#alert.hide {
+    display: none; /* Hide when the class is added */
+}
