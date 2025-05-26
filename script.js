@@ -1,6 +1,12 @@
 let POSSIBLE_CHOICES = ['rock', 'paper', 'scissors'];
 let playerScore = 0;
 let computerScore = 0;
+let rockBtn = document.querySelector('#rock');
+let paperBtn = document.querySelector('#paper');
+let scissorsBtn = document.querySelector('#scissors');
+let userScoreDisplay = document.querySelector('#user-score');
+let computerScoreDisplay = document.querySelector('#computer-score');
+
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
@@ -63,4 +69,20 @@ function playGame() {
     computerScore = 0;
 }
 
-// playGame();
+function updateScoreDisplay() {
+    userScoreDisplay.textContent = `User: ${playerScore}`;
+    computerScoreDisplay.textContent = `Computer: ${computerScore}`;
+}
+
+rockBtn.addEventListener('click', () => {
+    playRound('rock', getComputerChoice());
+    updateScoreDisplay();
+});
+paperBtn.addEventListener('click', () => {
+    playRound('paper', getComputerChoice());
+    updateScoreDisplay();
+});
+scissorsBtn.addEventListener('click', () => {
+    playRound('scissors', getComputerChoice());
+    updateScoreDisplay();
+});

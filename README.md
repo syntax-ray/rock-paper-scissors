@@ -1,8 +1,6 @@
 # rock-paper-scissors
 
-This is an Odin Project foundations project that allows a user to play rock paper scissors vs the computer.
-
-The game consists of 5 rounds of rock paper scissors after which the winner is declared.
+This is an Odin Project foundations project that allows a user to play infinite amount of rock paper scissors games vs the computer.
 
 Link: https://syntax-ray.github.io/rock-paper-scissors/
 
