@@ -4,6 +4,6 @@ This is an Odin Project foundations project that allows a user to play infinite 
 
 Link: https://syntax-ray.github.io/rock-paper-scissors/
 
-## Need more?
+## Need to reset?
 
-Refresh the page to play again!
+Refresh the page to rest the score!
