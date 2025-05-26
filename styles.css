@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+.scores {
+    display: flex;
+    gap: 20px;
+}
+
+.moves {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+}
+
+.move-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+
+#rock,
+#paper,
+#scissors {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}

@@ -63,4 +63,4 @@ function playGame() {
     computerScore = 0;
 }
 
-playGame();
+// playGame();
